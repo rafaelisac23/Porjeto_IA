@@ -1,0 +1,24 @@
+{
+  "name": "projetoia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx browser-sync start --server --files src/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaelisac23/Porjeto_IA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaelisac23/Porjeto_IA/issues"
+  },
+  "homepage": "https://github.com/rafaelisac23/Porjeto_IA#readme",
+  "devDependencies": {
+    "browser-sync": "^3.0.4"
+  }
+}
