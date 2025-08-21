@@ -1,8 +1,9 @@
-const { GestureDescription, Finger, FingerCurl } = window.fp;
+const { GestureDescription, Finger, FingerCurl, FingerDirection } = window.fp;
 
 const RockGesture = new GestureDescription("rock"); // ✊️
 const PaperGesture = new GestureDescription("paper"); // 🖐
 const ScissorsGesture = new GestureDescription("scissors"); // ✌️
+const dontGesture = new GestureDescription("dont"); // ⛔
 
 // Rock
 // -----------------------------------------------------------------------------
@@ -41,5 +42,15 @@ ScissorsGesture.addCurl(Finger.Ring, FingerCurl.HalfCurl, 0.9);
 ScissorsGesture.addCurl(Finger.Pinky, FingerCurl.FullCurl, 1.0);
 ScissorsGesture.addCurl(Finger.Pinky, FingerCurl.HalfCurl, 0.9);
 
-const gestures = [RockGesture, PaperGesture, ScissorsGesture];
+//Dont ⛔
+for (const finger of Finger.all) {
+  dontGesture.addDirection(finger, FingerDirection.DiagonalUpRight, 1.0);
+  dontGesture.addDirection(finger, FingerDirection.DiagonalUpLeft, 1.0);
+
+  dontGesture.addDirection(finger, FingerDirection.HorizontalRight, 1.0);
+  dontGesture.addDirection(finger, FingerDirection.HorizontalLeft, 1.0);
+}
+
+const gestures = [RockGesture, PaperGesture, ScissorsGesture, dontGesture];
+
 export { gestures };
